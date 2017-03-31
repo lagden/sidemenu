@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Example - SideMenu</title>
+		<link rel="stylesheet" href="../dist/sidemenu.css">
+		<style>
+			.hamburguer {
+				width: 48px;
+				height: 48px;
+			}
+			.sidemenu__nav > a {
+				display: block;
+				margin: 0;
+				padding: 0px 15px;
+				box-sizing: border-box;
+				overflow: hidden;
+				font-size: 0.9em;
+				letter-spacing: 0;
+				text-decoration: none;
+				cursor: pointer;
+				height: 48px;
+				line-height: 48px;
+				white-space: nowrap;
+				user-select: none;
+				color: black;
+				border-bottom: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<aside id="menu" class="sidemenu">
+			<nav class="sidemenu__nav">
+				<a href="#a"><span>Item A</span></a>
+				<a href="#b"><span>Item B</span></a>
+				<a href="#c"><span>Item C</span></a>
+			</nav>
+		</aside>
+		<header>
+			<button type="button" id="hamburguer" class="hamburguer">☰</button>
+			<h1>Apenas um show</h1>
+		</header>
+		<main>
+			<p>Clique no hamburguer</p>
+		</main>
+		<script src="../dist/index.js"></script>
+		<script>
+			const sideMenu = new SideMenu('#menu')
+			const hamburguer = document.querySelector('#hamburguer')
+			hamburguer.addEventListener('click', event => {
+				sideMenu.open()
+			})
+		</script>
+	</body>
+</html>
